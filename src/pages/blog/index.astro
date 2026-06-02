@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+
+const posts = [
+  {
+    slug: 'first-post',
+    title: '第一篇文章',
+    description: '歡迎來到我的 Astro 部落格！',
+  },
+  {
+    slug: 'second-post',
+    title: '認識 Astro Islands',
+    description: '深入了解 Astro 的 Islands 架構。',
+  },
+];
+---
+
+<BaseLayout title="部落格 | Astro 練習">
+  <h1>部落格</h1>
+  <div class="posts">
+    {posts.map((post) => (
+      <Card
+        title={post.title}
+        description={post.description}
+        href={`/blog/${post.slug}`}
+      />
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  .posts {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+</style>

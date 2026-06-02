@@ -1,0 +1,28 @@
+@import "@fontsource/roboto/400.css";
+@import "@fontsource/roboto/500.css";
+@import "@fontsource/roboto/600.css";
+@import "@fontsource/roboto/700.css";
+@import "@fontsource/roboto/800.css";
+@import "@fontsource/roboto-flex/400.css";
+@import "@fontsource/noto-sans-tc/400.css";
+@import "@fontsource/noto-sans-tc/500.css";
+@import "@fontsource/noto-sans-tc/600.css";
+@import "@fontsource/noto-sans-tc/700.css";
+@import "@fontsource/noto-sans-tc/800.css";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: "Roboto","Roboto Flex","Noto Sans TC",sans-serif;
+  color: #333;
+}
+
+a {
+  color: #7c3aed;
+}

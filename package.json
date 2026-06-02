@@ -12,6 +12,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/noto-sans-tc": "^5.2.9",
+    "@fontsource/roboto": "^5.2.10",
+    "@fontsource/roboto-flex": "^5.2.8",
     "astro": "^6.4.2"
   }
 }

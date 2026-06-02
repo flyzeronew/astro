@@ -8,6 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@fontsource/noto-sans-tc':
+        specifier: ^5.2.9
+        version: 5.2.9
+      '@fontsource/roboto':
+        specifier: ^5.2.10
+        version: 5.2.10
+      '@fontsource/roboto-flex':
+        specifier: ^5.2.8
+        version: 5.2.8
       astro:
         specifier: ^6.4.2
         version: 6.4.2(rollup@4.60.4)
@@ -218,6 +227,15 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource/noto-sans-tc@5.2.9':
+    resolution: {integrity: sha512-Z+pXTvXYrip79lPV9X1lCYO3UTys55P25VqcifDStIzdZ86I4R6t8dz+NhGd09YdbvHWvOCB5Icw1m7glKHPNQ==}
+
+  '@fontsource/roboto-flex@5.2.8':
+    resolution: {integrity: sha512-aaW46EjJ39dm3XTX3kTPxShuqcZBp4TttiacBu7c1vOlMpvXeW+rX9Yd+u6vU4MZR0gO1//SqM6zBDdrm+ifAA==}
+
+  '@fontsource/roboto@5.2.10':
+    resolution: {integrity: sha512-8HlA5FtSfz//oFSr2eL7GFXAiE7eIkcGOtx7tjsLKq+as702x9+GU7K95iDeWFapHC4M2hv9RrpXKRTGGBI8Zg==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -1584,6 +1602,12 @@ snapshots:
 
   '@esbuild/win32-x64@0.27.7':
     optional: true
+
+  '@fontsource/noto-sans-tc@5.2.9': {}
+
+  '@fontsource/roboto-flex@5.2.8': {}
+
+  '@fontsource/roboto@5.2.10': {}
 
   '@img/colour@1.1.0':
     optional: true

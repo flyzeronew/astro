@@ -1,43 +1,48 @@
-# Astro Starter Kit: Minimal
+# Astro 練習專案
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+以 [Astro](https://astro.build) 6.x 建立的靜態網站練習專案，使用繁體中文介面。
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 技術棧
 
-## 🚀 Project Structure
+- **Astro 6.x** — 靜態網站框架
+- **TypeScript** — strict 模式
+- **pnpm** — 套件管理器
+- **Fontsource** — 本地字型（Roboto、Roboto Flex、Noto Sans TC）
 
-Inside of your Astro project, you'll see the following folders and files:
+## 專案結構
 
 ```text
 /
 ├── public/
+│   └── favicon.svg
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── assets/          # 經 Vite 處理的靜態資源
+│   ├── components/
+│   │   ├── Card.astro
+│   │   ├── Header.astro
+│   │   └── Footer.astro
+│   ├── layouts/
+│   │   └── BaseLayout.astro   # 共用版型，含 OG meta
+│   ├── pages/
+│   │   ├── index.astro
+│   │   ├── about.astro
+│   │   └── blog/
+│   │       ├── index.astro
+│   │       ├── first-post.astro
+│   │       └── second-post.astro
+│   └── styles/
+│       └── global.css
+├── astro.config.mjs
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 常用指令
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| 指令 | 說明 |
+| :--- | :--- |
+| `pnpm install` | 安裝相依套件 |
+| `pnpm dev` | 啟動開發伺服器 `localhost:4321` |
+| `pnpm build` | 建置正式版到 `./dist/` |
+| `pnpm preview` | 本地預覽建置結果 |
+| `pnpm astro check` | TypeScript 型別檢查 |
+| `pnpm astro add <套件>` | 新增官方整合（如 react、tailwind）|

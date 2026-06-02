@@ -1,0 +1,45 @@
+---
+const pathname = Astro.url.pathname;
+
+function navActive(href: string) {
+  if (href === '/') {
+    return pathname === '/' || pathname === '';
+  }
+  return pathname === href || pathname.startsWith(href + '/');
+}
+---
+<header>
+  <nav>
+    <a href="/" class:list={{ act: navActive('/') }}>首頁</a>
+    <a href="/about" class:list={{ act: navActive('/about') }}>關於</a>
+    <a href="/blog" class:list={{ act: navActive('/blog') }}>部落格</a>
+  </nav>
+</header>
+
+<style>
+  header {
+    background: #7c3aed;
+    padding: 1rem 2rem;
+  }
+
+  nav {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 15px;
+    transition: 0.3s;
+    border-radius: 10px;
+  }
+  nav a.act,nav a:hover {
+    font-weight: 800;
+    color: #7c3aed;
+    background-color: #fff;
+    padding: 5px 15px;
+    border-radius: 10px;
+  }
+</style>
