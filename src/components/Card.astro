@@ -3,26 +3,57 @@ interface Props {
   title: string;
   description: string;
   href?: string;
+  cover?: string;
+  newTab?: boolean;
 }
 
-const { title, description, href } = Astro.props;
+const { title, description, href, cover, newTab } = Astro.props;
+const target = newTab ? '_blank' : undefined;
+const rel = newTab ? 'noopener noreferrer' : undefined;
+const Tag = href ? 'a' : 'div';
 ---
 
-<div class="card">
-  <h3>{href ? <a href={href}>{title}</a> : title}</h3>
-  <p>{description}</p>
-</div>
+<Tag class="card" href={href} target={target} rel={rel}>
+  {cover && (
+    <span class="cover">
+      <img src={cover} alt={title} loading="lazy" />
+    </span>
+  )}
+  <h3>{title}</h3>
+  {description && <p>{description}</p>}
+</Tag>
 
 <style>
   .card {
+    display: block;
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     padding: 1.5rem;
     transition: box-shadow 0.2s;
+    color: inherit;
+    text-decoration: none;
   }
 
+  a.card:hover,
   .card:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  a.card:hover h3 {
+    color: #7c3aed;
+  }
+
+  .cover {
+    display: block;
+    margin: -1.5rem -1.5rem 1rem;
+  }
+
+  .cover img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    display: block;
   }
 
   h3 {
